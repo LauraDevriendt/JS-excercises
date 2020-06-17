@@ -10,18 +10,33 @@
 // You will have time to focus on it later.
 
 (function () {
+  var maanden = new Array();
+  maanden[0] = "January";
+  maanden[1] = "February";
+  maanden[2] = "March";
+  maanden[3] = "April";
+  maanden[4] = "May";
+  maanden[5] = "June";
+  maanden[6] = "July";
+  maanden[7] = "August";
+  maanden[8] = "September";
+  maanden[9] = "October";
+  maanden[10] = "November";
+  maanden[11] = "December";
+
   document
     .getElementById("run")
     .addEventListener("click", function numberOfFridays13th(year) {
       year = parseInt(document.getElementById("year").value);
-      var count = 0;
+      var months = "";
       for (let month = 0; month < 12; month++) {
         let d = new Date(year, month, 13);
         if (d.getDay() == 5) {
-          count++;
+          months += `${maanden[d.getMonth()]} `;
+          console.log(months);
         }
       }
 
-      alert(`${count} Fridays the 13th in the year ${year}`);
+      alert(`${months}`);
     });
 })();

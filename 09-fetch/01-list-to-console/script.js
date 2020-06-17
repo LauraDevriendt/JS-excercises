@@ -1,22 +1,18 @@
 /* becode/javascript
  *
- * /02-maths/03-even-square/script.js - 2.3: carrés des pairs
+ * /09-fetch/01-list-to-console/script.js - 11.1: liste vers console
  *
  * coded by leny@BeCode
- * started at 26/10/2018
+ * started at 12/05/2019
  */
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function () {
-  let number = 1;
+(() => {
   document.getElementById("run").addEventListener("click", function () {
-    while (number * number <= 21) {
-      number += `${number ** 2} `;
-      number++;
-    }
+    fetch("../../_shared/api.json")
+      .then((response) => response.json())
+      .then((data) => console.log(data));
   });
 })();
-
-
