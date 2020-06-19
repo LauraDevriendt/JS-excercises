@@ -21,6 +21,7 @@
       console.table(arr);
       arr.forEach((post) => {
         window.lib.getComments(post.id, test);
+        post.comments = comments;
       });
      
     }

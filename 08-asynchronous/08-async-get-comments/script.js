@@ -10,14 +10,16 @@
 // You will have time to focus on it later.
 
 (() => {
+  async function processComments(postId){
+    let comments= await window.lib.getComments(postId);
+    console.log(postId, comments);
+  }
   async function asyncCall() {
-    let ids = "";
-    console.log("calling");
-    const result = await window.lib.getPosts();
-    result.forEach((res) => {
-      ids += res.id;
+    let posts = await window.lib.getPosts();
+    posts.forEach((post) => {
+     processComments(post.id)
     });
-   let endResult=await window.lib.getComments(ids);
+  
   }
 
   document.getElementById("run").addEventListener("click", asyncCall);

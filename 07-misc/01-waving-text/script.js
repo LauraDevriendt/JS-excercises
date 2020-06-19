@@ -62,3 +62,27 @@
 
   wave();
 })();
+
+/* shorter option 
+
+let word= document.querySelector('#target').innerHTML;
+document.querySelector('#target').innerHTML='';
+
+let sizes = [10,12,14,16,18,20];
+let counter =0;
+
+for(let i=0; i<word.length; i++){
+  if(sizes.length=== counter){
+    sizes=sizes.reverse();
+    counter=0;
+  }
+  let span = document.createElement(tagName: 'span')
+  span.innerHTML(word[i]);
+  span.style.fontSize = 14 + "px";
+
+  // someting with font sizes
+
+document.querySelector(selectors: '#target').appendChild(span);
+}
+
+*/

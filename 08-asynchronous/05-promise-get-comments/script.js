@@ -12,15 +12,17 @@
 (() => {
   document.getElementById("run").addEventListener("click", function () {
     window.lib
-      .getPosts()
-      .then(function (arr) {
-
-        window.lib.getComments(arr);
-      })
-      .then(function (arr) {
-        console.table(arr);
-      })
-      .catch(function (error) {
+      .getPosts() // this is the promise
+      .then( (posts) => {// promise is furfilled
+      posts.forEach(post => {
+        let innerPromise = window.lib.getComments(post.id);
+        innerPromise.then((comments)=>{
+          console.table(comments);
+        })        
+      });
+      }
+      )
+      .catch(function (error) { // promise isn't furfilled
         console.error();
       });
   });
