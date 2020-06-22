@@ -13,6 +13,8 @@
     let i=0;
     let target =document.getElementById('target')
     let text =target.innerHTML
+    console.log(target)
+    console.log(text)
     
    
     target.innerHTML="";
@@ -20,7 +22,7 @@
    function writeEffect(){
       
    if(i<text.length){
-       target.innerHTML+= text.charAt(i);
+       target.innerHTML+= text[i];
        i++
        setTimeout(writeEffect,Math.floor(Math.random() * 500))
    }
@@ -29,3 +31,4 @@
   
    writeEffect();
 })();
+

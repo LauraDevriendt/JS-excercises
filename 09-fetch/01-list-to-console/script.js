@@ -14,5 +14,6 @@
     fetch("../../_shared/api.json")
       .then((response) => response.json())
       .then((data) => console.log(data));
+      
   });
 })();

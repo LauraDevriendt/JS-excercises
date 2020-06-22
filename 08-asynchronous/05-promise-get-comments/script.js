@@ -20,8 +20,7 @@
           console.table(comments);
         })        
       });
-      }
-      )
+      })
       .catch(function (error) { // promise isn't furfilled
         console.error();
       });
